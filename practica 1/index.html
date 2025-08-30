@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Metadatos del documento -->
+  <meta charset="utf-8"> <!-- Establece la codificación de caracteres (UTF-8) para que se muestren correctamente caracteres especiales como acentos -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace que la página sea responsiva en dispositivos móviles -->
+  <title>RED TEAM - Marketing digital | Tu verdadero Social Group</title> <!-- Título que aparece en la pestaña del navegador -->
+
+  <style>
+    /* ======================================
+       Estilos globales (CSS) para la apariencia de la página
+       ====================================== */
+    body {
+      margin: 0; /* Elimina el margen por defecto del navegador */
+      font-family: Arial, sans-serif; /* Establece la fuente predeterminada */
+      background: #f4f7fb; /* Color de fondo */
+      color: #222; /* Color de texto */
+    }
+
+    header {
+      background: linear-gradient(90deg, #d62828, #a91b1b); /* Fondo de color degradado */
+      color: white; /* Color de texto en el encabezado */
+      padding: 20px; /* Espaciado dentro del encabezado */
+      display: flex; /* Utiliza Flexbox para organizar el contenido */
+      align-items: center; /* Alinea los elementos verticalmente */
+      gap: 15px; /* Espacio entre el logo y el texto */
+    }
+
+    /* Estilos para la imagen del logo */
+    header img.logo {
+      width: 70px; /* Ancho de la imagen */
+      height: 70px; /* Alto de la imagen */
+      border-radius: 10px; /* Bordes redondeados */
+      object-fit: cover; /* Ajusta la imagen para que cubra el área sin distorsionarse */
+    }
+
+    /* Estilo para el contenedor principal */
+    main {
+      max-width: 900px; /* Ancho máximo de la página */
+      margin: 20px auto; /* Centra la página horizontalmente y agrega un espacio superior */
+      padding: 0 15px; /* Espaciado interno */
+    }
+
+    /* Estilo para las tarjetas de contenido */
+    .card {
+      background: white; /* Fondo blanco */
+      padding: 15px; /* Espaciado dentro de las tarjetas */
+      border-radius: 10px; /* Bordes redondeados */
+      margin-bottom: 20px; /* Espacio debajo de cada tarjeta */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
+    }
+
+    /* Estilo de la cuadrícula de dos columnas */
+    .grid-2 {
+      display: grid; /* Utiliza Grid Layout */
+      grid-template-columns: 1fr 300px; /* Dos columnas, la segunda tiene un ancho fijo de 300px */
+      gap: 20px; /* Espacio entre columnas */
+    }
+
+    /* Estilos para las imágenes dentro de la etiqueta <figure> */
+    figure img {
+      width: 100%; /* La imagen ocupa todo el ancho disponible */
+      border-radius: 10px; /* Bordes redondeados */
+    }
+
+    figcaption {
+      font-size: 13px; /* Tamaño de la fuente del pie de foto */
+      color: #555; /* Color gris para el pie de foto */
+      margin-top: 5px; /* Espacio superior para separar del contenido */
+    }
+
+    /* Estilo para los enlaces de contacto (WhatsApp, Instagram, etc.) */
+    .contact-links a {
+      display: inline-block; /* Los enlaces se muestran en línea pero permiten márgenes */
+      margin: 6px 10px 6px 0; /* Márgenes entre los enlaces */
+      text-decoration: none; /* Elimina el subrayado por defecto */
+      color: #a91b1b; /* Color del enlace */
+      font-weight: bold; /* Hace que el texto sea en negrita */
+    }
+
+    /* Estilo para los elementos del formulario */
+    form label {
+      display: block; /* Hace que las etiquetas ocupen toda la línea */
+      margin: 8px 0 4px; /* Espaciado alrededor de las etiquetas */
+    }
+
+    /* Estilo para los campos del formulario */
+    input, textarea {
+      width: 100%; /* Los campos ocupan todo el ancho disponible */
+      padding: 10px; /* Relleno dentro de los campos */
+      border-radius: 6px; /* Bordes redondeados */
+      border: 1px solid #ccc; /* Borde gris claro */
+    }
+
+    /* Estilo específico para el área de texto (textarea) */
+    textarea { 
+      min-height: 100px; /* Altura mínima */
+    }
+
+    /* Estilo para el botón de envío */
+    button {
+      background: #d62828; /* Fondo rojo para el botón */
+      color: white; /* Texto blanco */
+      border: none; /* Sin borde */
+      padding: 10px 15px; /* Espaciado dentro del botón */
+      border-radius: 6px; /* Bordes redondeados */
+      margin-top: 10px; /* Espacio encima del botón */
+      cursor: pointer; /* Cambia el cursor a mano cuando se pasa por encima */
+    }
+
+    /* Estilos para el pie de página */
+    footer {
+      text-align: center; /* Centra el texto en el pie de página */
+      font-size: 13px; /* Tamaño de texto pequeño */
+      color: #666; /* Color gris oscuro */
+      padding: 15px; /* Espaciado interno */
+    }
+
+    /* Estilo para dispositivos pequeños */
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; } /* En pantallas pequeñas, coloca todo en una columna */
+    }
+  </style>
+</head>
+<body>
+  <!-- ========================
+       Encabezado con logo y nombre del negocio
+       ======================== -->
+  <header>
+    <img src="logo.png" alt="Logo RED TEAM" class="logo"> <!-- Logo del negocio -->
+    <div>
+      <h1>RED TEAM</h1> <!-- Nombre del negocio -->
+      <p>Tu verdadero Social Group</p> <!-- Eslogan del negocio -->
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================
+         Sección de descripción sobre el negocio y foto
+         ======================== -->
+    <section class="card grid-2">
+      <div>
+        <h2>Sobre RED TEAM</h2> <!-- Título de la sección -->
+        <p><strong>RED TEAM</strong> es un negocio dedicado al <strong>marketing digital de redes sociales</strong>. 
+        Trabajamos con plataformas como TikTok, YouTube, Instagram y Twitch.</p> <!-- Descripción del negocio -->
+        
+        <h3>Servicios principales:</h3> <!-- Título de la lista de servicios -->
+        <ul>
+          <li>Servicio de SEO.</li> <!-- Elementos de la lista de servicios -->
+          <li>Apoyo de comunidad.</li>
+          <li>Soporte técnico y actualización de nicho.</li>
+        </ul>
+
+        <!-- Enlaces de contacto a las redes sociales -->
+        <div class="contact-links">
+          <a href="https://wa.me/18099582887">WhatsApp: +1 809-958-2887</a>
+          <a href="https://www.instagram.com/rdzouo">Instagram: @RDZOUO</a>
+          <a href="https://www.youtube.com/@RDZOUO">YouTube: RDZOUO</a>
+          <a href="https://www.tiktok.com/@rdzouo.mlbb">TikTok: RDZOUO</a>
+        </div>
+      </div>
+
+      <!-- Imagen del negocio (foto personal o productos) -->
+      <figure>
+        <img src="foto_con_edian.jpg" alt="Foto con mi primer negocio con Edian">
+        <figcaption>Foto con mi primer negocio junto a Edian.</figcaption> <!-- Pie de foto -->
+      </figure>
+    </section>
+
+    <!-- ========================
+         Formulario de contacto
+         ======================== -->
+    <section class="card">
+      <h2>Reserva / Contacto</h2> <!-- Título del formulario -->
+      <form>
+        <label for="nombre">Nombre:</label> <!-- Etiqueta para el campo Nombre -->
+        <input type="text" id="nombre" name="nombre" required> <!-- Campo de texto para el nombre -->
+
+        <label for="email">Correo electrónico:</label> <!-- Etiqueta para el campo Email -->
+        <input type="email" id="email" name="email" required> <!-- Campo de correo electrónico -->
+
+        <label for="mensaje">Mensaje:</label> <!-- Etiqueta para el campo Mensaje -->
+        <textarea id="mensaje" name="mensaje" required></textarea> <!-- Área de texto para el mensaje -->
+
+        <button type="submit">Enviar</button> <!-- Botón de envío del formulario -->
+      </form>
+    </section>
+  </main>
+
+  <!-- ========================
+       Pie de página con información adicional
+       ======================== -->
+  <footer>
+    RED TEAM © 2025 - Reparación y Ventas de Dispositivos Electrónicos
+  </footer>
+</body>
+</html>
