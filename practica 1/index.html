@@ -4,195 +4,275 @@
   <!-- Metadatos del documento -->
   <meta charset="utf-8"> <!-- Establece la codificación de caracteres (UTF-8) para que se muestren correctamente caracteres especiales como acentos -->
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace que la página sea responsiva en dispositivos móviles -->
-  <title>RED TEAM - Marketing digital | Tu verdadero Social Group</title> <!-- Título que aparece en la pestaña del navegador -->
+  <meta name="description" content="RED TEAM - Marketing Digital. Servicios de SEO, apoyo a la comunidad y soporte técnico en plataformas como TikTok, YouTube, Instagram y Twitch.">
+  <title>RED TEAM - Marketing digital | Tu verdadero Social Group</title>
 
   <style>
-    /* ======================================
-       Estilos globales (CSS) para la apariencia de la página
-       ====================================== */
+    /* ===========================================
+       Variables CSS para colores y tamaños
+       =========================================== */
+    :root {
+      --primary-color: #d62828; /* Rojo para botones y enlaces */
+      --secondary-color: #a91b1b; /* Rojo oscuro para textos destacados */
+      --background-color: #f4f7fb; /* Fondo de página */
+      --text-color: #222; /* Color de texto principal */
+      --font-family: 'Arial', sans-serif; /* Fuente general */
+      --font-size-base: 16px; /* Tamaño de fuente base */
+      --font-size-heading: 24px; /* Tamaño para títulos */
+      --font-size-subheading: 18px; /* Tamaño para subtítulos */
+    }
+
+    /* ===========================================
+       Estilos globales (CSS)
+       =========================================== */
     body {
-      margin: 0; /* Elimina el margen por defecto del navegador */
-      font-family: Arial, sans-serif; /* Establece la fuente predeterminada */
-      background: #f4f7fb; /* Color de fondo */
-      color: #222; /* Color de texto */
+      margin: 0; /* Elimina el margen por defecto */
+      font-family: var(--font-family); /* Establece la fuente en base a la variable definida */
+      background: var(--background-color); /* Aplica el color de fondo */
+      color: var(--text-color); /* Establece el color de texto */
+      font-size: var(--font-size-base); /* Define el tamaño base de la fuente */
+      line-height: 1.6; /* Define la altura de línea para facilitar la lectura */
+    }
+
+    /* Enlace "Saltar al contenido" */
+    a[href="#contenido"] {
+      position: fixed; /* Posiciona el enlace de forma fija en la pantalla */
+      top: 20px; /* Distancia desde la parte superior */
+      right: 20px; /* Distancia desde la parte derecha */
+      background: var(--primary-color); /* Aplica color de fondo */
+      color: white; /* El texto será blanco */
+      padding: 10px; /* Espaciado interno */
+      text-decoration: none; /* Elimina subrayado */
+      border-radius: 5px; /* Bordes redondeados */
+      z-index: 1000; /* Asegura que el enlace esté encima de otros elementos */
+    }
+
+    a[href="#contenido"]:focus {
+      outline: 2px solid var(--secondary-color); /* Mejora accesibilidad: destaca el enlace cuando se enfoca */
     }
 
     header {
-      background: linear-gradient(90deg, #d62828, #a91b1b); /* Fondo de color degradado */
-      color: white; /* Color de texto en el encabezado */
-      padding: 20px; /* Espaciado dentro del encabezado */
-      display: flex; /* Utiliza Flexbox para organizar el contenido */
-      align-items: center; /* Alinea los elementos verticalmente */
-      gap: 15px; /* Espacio entre el logo y el texto */
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); /* Fondo con un gradiente */
+      color: white; /* Texto blanco */
+      padding: 20px; /* Espaciado interno */
+      display: flex; /* Utiliza un diseño flexible */
+      align-items: center; /* Centra los elementos verticalmente */
+      gap: 15px; /* Espaciado entre los elementos */
+      transition: transform 0.5s ease-in-out; /* Transición suave para efectos en el header */
     }
 
-    /* Estilos para la imagen del logo */
     header img.logo {
-      width: 70px; /* Ancho de la imagen */
-      height: 70px; /* Alto de la imagen */
+      width: 70px; /* Establece el tamaño del logo */
+      height: 70px; /* Establece el tamaño del logo */
       border-radius: 10px; /* Bordes redondeados */
-      object-fit: cover; /* Ajusta la imagen para que cubra el área sin distorsionarse */
+      object-fit: cover; /* Ajusta la imagen para que cubra completamente el contenedor */
+      animation: fadeInBounce 2s ease-in-out; /* Animación del logo */
     }
 
-    /* Estilo para el contenedor principal */
+    header h1 {
+      font-size: var(--font-size-heading); /* Establece el tamaño de fuente para el título */
+      margin: 0; /* Elimina el margen por defecto */
+    }
+
+    header p {
+      font-size: var(--font-size-base); /* Establece el tamaño de fuente para el párrafo */
+      margin: 0; /* Elimina el margen por defecto */
+      opacity: 0.8; /* Opacidad del 80% */
+    }
+
+    /* ===========================================
+       Contenedor principal
+       =========================================== */
     main {
-      max-width: 900px; /* Ancho máximo de la página */
-      margin: 20px auto; /* Centra la página horizontalmente y agrega un espacio superior */
-      padding: 0 15px; /* Espaciado interno */
+      max-width: 900px; /* Limita el ancho máximo del contenedor */
+      margin: 20px auto; /* Centra el contenedor en la página */
+      padding: 0 15px; /* Agrega espaciado interno */
     }
 
-    /* Estilo para las tarjetas de contenido */
     .card {
-      background: white; /* Fondo blanco */
-      padding: 15px; /* Espaciado dentro de las tarjetas */
+      background: white; /* Fondo blanco para las tarjetas */
+      padding: 15px; /* Espaciado interno */
       border-radius: 10px; /* Bordes redondeados */
-      margin-bottom: 20px; /* Espacio debajo de cada tarjeta */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil */
+      margin-bottom: 20px; /* Espaciado en la parte inferior */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil alrededor de las tarjetas */
     }
 
-    /* Estilo de la cuadrícula de dos columnas */
     .grid-2 {
-      display: grid; /* Utiliza Grid Layout */
-      grid-template-columns: 1fr 300px; /* Dos columnas, la segunda tiene un ancho fijo de 300px */
-      gap: 20px; /* Espacio entre columnas */
+      display: grid; /* Utiliza un diseño en cuadrícula */
+      grid-template-columns: 1fr 300px; /* Dos columnas, una flexible y otra de 300px */
+      gap: 20px; /* Espaciado entre las columnas */
     }
 
-    /* Estilos para las imágenes dentro de la etiqueta <figure> */
+    .grid-services {
+      display: grid; /* Utiliza un diseño en cuadrícula */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste dinámico de columnas */
+      gap: 20px; /* Espaciado entre las columnas */
+    }
+
     figure img {
-      width: 100%; /* La imagen ocupa todo el ancho disponible */
-      border-radius: 10px; /* Bordes redondeados */
+      width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+      border-radius: 10px; /* Bordes redondeados en las imágenes */
+      object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor */
     }
 
     figcaption {
-      font-size: 13px; /* Tamaño de la fuente del pie de foto */
-      color: #555; /* Color gris para el pie de foto */
-      margin-top: 5px; /* Espacio superior para separar del contenido */
+      font-size: 13px; /* Tamaño de la fuente para el pie de imagen */
+      color: #555; /* Color gris claro para el pie de imagen */
+      margin-top: 5px; /* Espaciado superior */
     }
 
-    /* Estilo para los enlaces de contacto (WhatsApp, Instagram, etc.) */
     .contact-links a {
-      display: inline-block; /* Los enlaces se muestran en línea pero permiten márgenes */
-      margin: 6px 10px 6px 0; /* Márgenes entre los enlaces */
-      text-decoration: none; /* Elimina el subrayado por defecto */
-      color: #a91b1b; /* Color del enlace */
-      font-weight: bold; /* Hace que el texto sea en negrita */
+      display: inline-block; /* Muestra los enlaces de forma en línea pero con propiedades de bloque */
+      margin: 6px 10px 6px 0; /* Margen alrededor de los enlaces */
+      text-decoration: none; /* Elimina el subrayado de los enlaces */
+      color: var(--secondary-color); /* Color del enlace */
+      font-weight: bold; /* Hace que el texto del enlace sea en negrita */
+      transition: color 0.3s ease; /* Transición suave para cambiar el color */
     }
 
-    /* Estilo para los elementos del formulario */
+    .contact-links a:hover {
+      color: #000; /* Cambia el color del enlace al pasar el mouse */
+    }
+
     form label {
-      display: block; /* Hace que las etiquetas ocupen toda la línea */
-      margin: 8px 0 4px; /* Espaciado alrededor de las etiquetas */
+      display: block; /* Muestra las etiquetas como bloques */
+      margin: 8px 0 4px; /* Márgenes alrededor de las etiquetas */
+      font-weight: bold; /* Texto en negrita */
     }
 
-    /* Estilo para los campos del formulario */
     input, textarea {
-      width: 100%; /* Los campos ocupan todo el ancho disponible */
-      padding: 10px; /* Relleno dentro de los campos */
+      width: 100%; /* Los campos de entrada ocupan todo el ancho disponible */
+      padding: 10px; /* Espaciado interno */
       border-radius: 6px; /* Bordes redondeados */
       border: 1px solid #ccc; /* Borde gris claro */
+      margin-bottom: 10px; /* Espaciado inferior */
     }
 
-    /* Estilo específico para el área de texto (textarea) */
-    textarea { 
-      min-height: 100px; /* Altura mínima */
-    }
-
-    /* Estilo para el botón de envío */
     button {
-      background: #d62828; /* Fondo rojo para el botón */
-      color: white; /* Texto blanco */
-      border: none; /* Sin borde */
-      padding: 10px 15px; /* Espaciado dentro del botón */
+      background: var(--primary-color); /* Fondo rojo para el botón */
+      color: white; /* Texto blanco en el botón */
+      border: none; /* Elimina el borde por defecto */
+      padding: 10px 15px; /* Espaciado interno */
       border-radius: 6px; /* Bordes redondeados */
-      margin-top: 10px; /* Espacio encima del botón */
-      cursor: pointer; /* Cambia el cursor a mano cuando se pasa por encima */
+      cursor: pointer; /* Cambia el cursor cuando se pasa sobre el botón */
+      font-weight: bold; /* Texto en negrita */
+      transition: background 0.3s ease; /* Transición suave para el fondo */
     }
 
-    /* Estilos para el pie de página */
+    button:hover {
+      background: #a91b1b; /* Cambia el fondo cuando se pasa el mouse */
+    }
+
     footer {
       text-align: center; /* Centra el texto en el pie de página */
-      font-size: 13px; /* Tamaño de texto pequeño */
-      color: #666; /* Color gris oscuro */
+      font-size: 13px; /* Tamaño de la fuente en el pie de página */
+      color: #666; /* Color gris claro */
       padding: 15px; /* Espaciado interno */
     }
 
-    /* Estilo para dispositivos pequeños */
+    /* ===========================================
+       Animación del logo con fadeIn y bounce
+       =========================================== */
+    @keyframes fadeInBounce {
+      0% { opacity: 0; transform: translateY(-30px); } /* Al inicio, la imagen está oculta y desplazada hacia arriba */
+      60% { opacity: 1; transform: translateY(10px); } /* La imagen aparece y rebota ligeramente */
+      100% { transform: translateY(0); } /* La imagen termina en su posición original */
+    }
+
     @media (max-width: 768px) {
-      .grid-2 { grid-template-columns: 1fr; } /* En pantallas pequeñas, coloca todo en una columna */
+      .grid-2 { grid-template-columns: 1fr; } /* En pantallas pequeñas, se ajusta la cuadrícula a una sola columna */
     }
   </style>
 </head>
 <body>
-  <!-- ========================
-       Encabezado con logo y nombre del negocio
-       ======================== -->
+  <!-- Enlace de "Saltar al contenido" -->
+  <a href="#contenido">Saltar al contenido</a>
+
   <header>
-    <img src="logo.png" alt="Logo RED TEAM" class="logo"> <!-- Logo del negocio -->
+    <img src="logo.png" alt="Logo RED TEAM" class="logo">
     <div>
-      <h1>RED TEAM</h1> <!-- Nombre del negocio -->
-      <p>Tu verdadero Social Group</p> <!-- Eslogan del negocio -->
+      <h1>RED TEAM</h1>
+      <p>Tu verdadero Social Group</p>
     </div>
   </header>
 
-  <main>
-    <!-- ========================
-         Sección de descripción sobre el negocio y foto
-         ======================== -->
-    <section class="card grid-2">
-      <div>
-        <h2>Sobre RED TEAM</h2> <!-- Título de la sección -->
-        <p><strong>RED TEAM</strong> es un negocio dedicado al <strong>marketing digital de redes sociales</strong>. 
-        Trabajamos con plataformas como TikTok, YouTube, Instagram y Twitch.</p> <!-- Descripción del negocio -->
-        
-        <h3>Servicios principales:</h3> <!-- Título de la lista de servicios -->
-        <ul>
-          <li>Servicio de SEO.</li> <!-- Elementos de la lista de servicios -->
-          <li>Apoyo de comunidad.</li>
-          <li>Soporte técnico y actualización de nicho.</li>
-        </ul>
+  <main id="contenido">
+    <!-- Sección de descripción sobre el negocio -->
+    <section class="card">
+      <h2>Sobre RED TEAM</h2>
+      <p><strong>RED TEAM</strong> es un negocio dedicado al <strong>marketing digital de redes sociales</strong>.
+      Trabajamos con plataformas como TikTok, YouTube, Instagram y Twitch.</p>
 
-        <!-- Enlaces de contacto a las redes sociales -->
-        <div class="contact-links">
-          <a href="https://wa.me/18099582887">WhatsApp: +1 809-958-2887</a>
-          <a href="https://www.instagram.com/rdzouo">Instagram: @RDZOUO</a>
-          <a href="https://www.youtube.com/@RDZOUO">YouTube: RDZOUO</a>
-          <a href="https://www.tiktok.com/@rdzouo">TikTok: RDZOUO</a>
+      <h3>Servicios principales:</h3>
+      <div class="grid-services">
+        <div class="card">
+          <h4>SEO</h4>
+          <p>Optimización para buscadores.</p>
+        </div>
+        <div class="card">
+          <h4>Apoyo de Comunidad</h4>
+          <p>Gestión de la interacción con los usuarios.</p>
+        </div>
+        <div class="card">
+          <h4>Soporte Técnico</h4>
+          <p>Asesoría y soporte en las plataformas digitales.</p>
         </div>
       </div>
+    </section>
 
-      <!-- Imagen del negocio (foto personal o productos) -->
+    <!-- Imagen de primer negocio con Edian -->
+    <section class="card">
+      <h2>Mi primer negocio con Edian</h2>
       <figure>
         <img src="foto_con_edian.jpg" alt="Foto con mi primer negocio con Edian">
-        <figcaption>Foto con mi primer negocio junto a Edian.</figcaption> <!-- Pie de foto -->
+        <figcaption>Foto con mi primer negocio junto a Edian.</figcaption>
       </figure>
     </section>
 
-    <!-- ========================
-         Formulario de contacto
-         ======================== -->
+    <!-- Enlaces de contacto a las redes sociales -->
+    <div class="contact-links">
+      <a href="https://wa.me/18099582887">WhatsApp: +1 809-958-2887</a>
+      <a href="https://www.instagram.com/rdzouo">Instagram: @RDZOUO</a>
+      <a href="https://www.youtube.com/@RDZOUO">YouTube: RDZOUO</a>
+      <a href="https://www.tiktok.com/@rdzouo">TikTok: RDZOUO</a>
+    </div>
+
+    <!-- Sección de contacto -->
     <section class="card">
-      <h2>Reserva / Contacto</h2> <!-- Título del formulario -->
+      <h2>Reserva / Contacto</h2>
       <form>
-        <label for="nombre">Nombre:</label> <!-- Etiqueta para el campo Nombre -->
-        <input type="text" id="nombre" name="nombre" required> <!-- Campo de texto para el nombre -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-        <label for="email">Correo electrónico:</label> <!-- Etiqueta para el campo Email -->
-        <input type="email" id="email" name="email" required> <!-- Campo de correo electrónico -->
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
 
-        <label for="mensaje">Mensaje:</label> <!-- Etiqueta para el campo Mensaje -->
-        <textarea id="mensaje" name="mensaje" required></textarea> <!-- Área de texto para el mensaje -->
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
 
-        <button type="submit">Enviar</button> <!-- Botón de envío del formulario -->
+        <button type="submit">Enviar</button>
       </form>
     </section>
+
+    <!-- Mapa incrustado de Google Maps -->
+    <section class="card">
+      <h2>Visítanos</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.655390747494!2d-122.08716668468147!3d37.423070979823244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb9ba12a1aab%3A0x6c14fbbc5b6a50e0!2sGoogleplex!5e0!3m2!1ses!2sus!4v1636945816761!5m2!1ses!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
   </main>
 
-  <!-- ========================
-       Pie de página con información adicional
-       ======================== -->
   <footer>
-    RED TEAM © 2025 - Reparación y Ventas de Dispositivos Electrónicos
+    RED TEAM © 2025 - Marketing Digital de Redes Sociales
   </footer>
+
+  <script>
+    // Contador dinámico en la sección de servicios
+    document.addEventListener('DOMContentLoaded', () => {
+      const counterElement = document.createElement('p');
+      counterElement.textContent = 'Hemos servido a +12 clientes felices este mes';
+      document.querySelector('.grid-services').appendChild(counterElement);
+    });
+  </script>
 </body>
 </html>
-
