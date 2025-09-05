@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Metadatos del documento -->
+  <meta charset="utf-8"> <!-- Establece la codificación de caracteres para garantizar que los caracteres especiales se muestren correctamente -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Hace la página responsiva para dispositivos móviles -->
+  <meta name="description" content="RED TEAM - Marketing Digital. Servicios de SEO, apoyo a la comunidad y soporte técnico en plataformas como TikTok, YouTube, Instagram y Twitch."> <!-- Descripción del sitio web para motores de búsqueda -->
+  <title>RED TEAM - Marketing digital | Tu verdadero Social Group</title> <!-- Título que aparece en la pestaña del navegador -->
+
+  <!-- Vinculación del archivo CSS -->
+  <link rel="stylesheet" href="estilos.css"> <!-- Enlaza el archivo de estilo CSS para aplicar los estilos al HTML -->
+</head>
+<body>
+  <!-- Enlace "Saltar al contenido" -->
+  <a href="#contenido">Saltar al contenido</a> <!-- Enlace que permite al usuario saltar directamente al contenido de la página. Es útil para la accesibilidad. -->
+
+  <header>
+    <img src="logo.png" alt="Logo RED TEAM" class="logo"> <!-- Imagen del logo con descripción alternativa para accesibilidad -->
+    <div>
+      <h1>RED TEAM</h1> <!-- Título principal del sitio -->
+      <p>Tu verdadero Social Group</p> <!-- Descripción breve o eslogan del negocio -->
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Sección de descripción sobre el negocio -->
+    <section class="card">
+      <h2>Sobre RED TEAM</h2> <!-- Título de sección -->
+      <p><strong>RED TEAM</strong> es un negocio dedicado al <strong>marketing digital de redes sociales</strong>.
+      Trabajamos con plataformas como TikTok, YouTube, Instagram y Twitch.</p> <!-- Descripción de lo que hace el negocio -->
+
+      <h3>Servicios principales:</h3> <!-- Subtítulo de la sección de servicios -->
+      <div class="grid-services">
+        <div class="card">
+          <h4>SEO</h4> <!-- Subtítulo para el servicio SEO -->
+          <p>Optimización para buscadores.</p> <!-- Descripción del servicio SEO -->
+        </div>
+        <div class="card">
+          <h4>Apoyo de Comunidad</h4> <!-- Subtítulo para el servicio de apoyo de comunidad -->
+          <p>Gestión de la interacción con los usuarios.</p> <!-- Descripción del servicio -->
+        </div>
+        <div class="card">
+          <h4>Soporte Técnico</h4> <!-- Subtítulo para el servicio de soporte técnico -->
+          <p>Asesoría y soporte en las plataformas digitales.</p> <!-- Descripción del servicio -->
+        </div>
+      </div>
+      <!-- Contador dinámico -->
+      <p id="counter">Hemos servido a +12 clientes felices este mes</p> <!-- Contador de clientes que se actualizará dinámicamente -->
+    </section>
+
+    <!-- Imagen de primer negocio con Edian -->
+    <section class="card">
+      <h2>Mi primer negocio con Edian</h2> <!-- Título para la imagen -->
+      <figure>
+        <img src="foto_con_edian.jpg" alt="Foto con mi primer negocio con Edian"> <!-- Imagen con descripción alternativa -->
+        <figcaption>Foto con mi primer negocio junto a Edian.</figcaption> <!-- Pie de foto para la imagen -->
+      </figure>
+    </section>
+
+    <!-- Enlaces de contacto a las redes sociales -->
+    <div class="contact-links">
+      <a href="https://wa.me/18099582887">WhatsApp: +1 809-958-2887</a> <!-- Enlace a WhatsApp -->
+      <a href="https://www.instagram.com/rdzouo">Instagram: @RDZOUO</a> <!-- Enlace a Instagram -->
+      <a href="https://www.youtube.com/@RDZOUO">YouTube: RDZOUO</a> <!-- Enlace a YouTube -->
+      <a href="https://www.tiktok.com/@rdzouo">TikTok: RDZOUO</a> <!-- Enlace a TikTok -->
+    </div>
+
+    <!-- Sección de contacto -->
+    <section class="card">
+      <h2>Reserva / Contacto</h2> <!-- Título para la sección de contacto -->
+      <form>
+        <label for="nombre">Nombre:</label> <!-- Etiqueta para el campo de nombre -->
+        <input type="text" id="nombre" name="nombre" required> <!-- Campo de entrada para el nombre -->
+
+        <label for="email">Correo electrónico:</label> <!-- Etiqueta para el campo de correo -->
+        <input type="email" id="email" name="email" required> <!-- Campo de entrada para el correo electrónico -->
+
+        <label for="mensaje">Mensaje:</label> <!-- Etiqueta para el campo de mensaje -->
+        <textarea id="mensaje" name="mensaje" required></textarea> <!-- Área de texto para el mensaje -->
+
+        <button type="submit">Enviar</button> <!-- Botón para enviar el formulario -->
+      </form>
+    </section>
+
+    <!-- Mapa incrustado de Google Maps -->
+    <section class="card">
+      <h2>Visítanos</h2> <!-- Título para la sección del mapa -->
+      <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> <!-- Mapa de Google incrustado -->
+    </section>
+
+  </main>
+
+  <footer>
+    RED TEAM © 2025 - Marketing Digital de Redes Sociales
+  </footer>
+
+  <!-- Contador dinámico de clientes -->
+  <script>
+    let count = 12;
+    setInterval(() => {
+      count += 1;
+      document.getElementById('counter').textContent = `Hemos servido a +${count} clientes felices este mes`; <!-- Incrementa el contador cada 5 segundos -->
+    }, 5000);
+  </script>
+</body>
+</html>

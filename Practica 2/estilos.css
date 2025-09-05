@@ -1,0 +1,156 @@
+/* ===========================================
+   Variables CSS para colores y tamaños
+   =========================================== */
+:root {
+  --primary-color: #d62828; /* Rojo para botones y enlaces */
+  --secondary-color: #a91b1b; /* Rojo oscuro para textos destacados */
+  --background-color: #f4f7fb; /* Fondo de página */
+  --text-color: #222; /* Color de texto principal */
+  --font-family: 'Arial', sans-serif; /* Fuente general */
+  --font-size-base: 16px; /* Tamaño de fuente base */
+  --font-size-heading: 24px; /* Tamaño para títulos */
+  --font-size-subheading: 18px; /* Tamaño para subtítulos */
+  --font-size-small: 14px; /* Tamaño pequeño para texto */
+}
+
+/* ===========================================
+   Estilos globales (CSS)
+   =========================================== */
+body {
+  margin: 0;
+  font-family: var(--font-family); /* Usar la fuente definida en las variables */
+  background: var(--background-color); /* Establece el fondo con el color definido */
+  color: var(--text-color); /* Color de texto principal */
+  font-size: var(--font-size-base); /* Tamaño de fuente base */
+  line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
+}
+
+/* Enlace "Saltar al contenido" */
+a[href="#contenido"] {
+  position: fixed; /* Lo coloca fijo en la pantalla */
+  top: 20px;
+  right: 20px;
+  background: var(--primary-color); /* Fondo rojo */
+  color: white; /* Texto blanco */
+  padding: 10px;
+  text-decoration: none; /* Elimina el subrayado */
+  border-radius: 5px; /* Bordes redondeados */
+  z-index: 1000; /* Asegura que el enlace esté por encima de otros elementos */
+}
+
+a[href="#contenido"]:focus {
+  outline: 2px solid var(--secondary-color); /* Resalta el enlace cuando se enfoca */
+}
+
+/* ===========================================
+   Header
+   =========================================== */
+header {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); /* Gradiente de color para el fondo del header */
+  color: white;
+  padding: 20px;
+  display: flex; /* Utiliza flexbox para el diseño del header */
+  align-items: center; /* Centra los elementos verticalmente */
+  gap: 15px; /* Espacio entre los elementos */
+}
+
+header img.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px; /* Bordes redondeados para el logo */
+  object-fit: cover; /* Ajusta la imagen para que cubra completamente el contenedor */
+  animation: fadeInBounce 2s ease-in-out; /* Animación para el logo */
+}
+
+header h1 {
+  font-size: var(--font-size-heading); /* Tamaño del título */
+}
+
+header p {
+  font-size: var(--font-size-small); /* Tamaño del texto del eslogan */
+  margin: 0;
+  opacity: 0.8; /* Opacidad para dar un efecto sutil */
+}
+
+/* ===========================================
+   Diseño de tarjetas (services, contacto)
+   =========================================== */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor de las tarjetas */
+}
+
+.grid-services {
+  display: grid; /* Utiliza el modelo de grid para la cuadrícula */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajuste dinámico de columnas */
+  gap: 20px;
+}
+
+/* Imagen en las tarjetas */
+figure img {
+  width: 100%; /* Hace que las imágenes ocupen el 100% del contenedor */
+  border-radius: 10px; /* Bordes redondeados */
+  object-fit: cover; /* Asegura que la imagen se ajuste completamente al contenedor */
+}
+
+/* ===========================================
+   Botones y enlaces
+   =========================================== */
+button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--secondary-color); /* Cambio de color al pasar el mouse */
+}
+
+.contact-links a {
+  display: inline-block;
+  margin: 6px 10px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #000;
+}
+
+/* ===========================================
+   Animación (Logo)
+   =========================================== */
+@keyframes fadeInBounce {
+  0% { opacity: 0; transform: translateY(-30px); } /* Al inicio, la imagen está oculta y desplazada hacia arriba */
+  60% { opacity: 1; transform: translateY(10px); } /* La imagen aparece y rebota ligeramente */
+  100% { transform: translateY(0); } /* La imagen termina en su posición original */
+}
+
+/* ===========================================
+   Estilo del pie de página
+   =========================================== */
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  padding: 15px;
+}
+
+/* ===========================================
+   Diseño responsivo
+   =========================================== */
+@media (max-width: 768px) {
+  .grid-services {
+    grid-template-columns: 1fr; /* En pantallas pequeñas, se muestra una sola columna */
+  }
+}
