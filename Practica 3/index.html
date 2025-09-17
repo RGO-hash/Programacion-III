@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--
+    Archivo: index.html
+    Propósito: Cargar el menú desde menu.json y permitir agregar/editar/eliminar opciones dinámicamente.
+    Recuerda: colocar index.html, styles.css, script.js y menu.json en la misma carpeta.
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú Dinámico (JSON) - Ejemplo</title>
+
+  <!-- Vinculamos el CSS externo. El archivo styles.css contiene estilos y explicaciones. -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER: lugar donde se renderiza el menú dinámico -->
+  <header class="site-header">
+    <!--
+      El <nav id="menu"> será llenado dinámicamente desde script.js leyendo menu.json.
+      El script crea elementos <a> y contenedores dependiendo de los datos.
+    -->
+    <nav id="menu" class="menu-nav" aria-label="Menú principal"></nav>
+
+    <!-- Botón para mostrar/ocultar menú en pantallas pequeñas -->
+    <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="menu">
+      ☰
+    </button>
+  </header>
+
+  <main class="container">
+
+    <!-- Área de administración del menú (formulario) -->
+    <section class="panel admin-panel">
+      <h2>Administrar Opciones del Menú</h2>
+
+      <!--
+        Formulario único para añadir o editar una opción.
+        - Si el campo hidden 'editingId' está vacío -> agregamos.
+        - Si tiene valor -> actualizamos la opción existente.
+      -->
+      <form id="menuForm">
+        <!-- campo oculto que contiene el id cuando editamos -->
+        <input type="hidden" id="editingId" value="">
+
+        <label for="nombre">Nombre (texto del menú)</label>
+        <input id="nombre" type="text" placeholder="Ej: Inicio" required>
+
+        <label for="enlace">Enlace (ruta o URL)</label>
+        <input id="enlace" type="text" placeholder="/inicio o https://tusitio.com/inicio" required>
+
+        <label for="icono">Icono (opcional, emoji o texto corto)</label>
+        <input id="icono" type="text" placeholder="Ej: 🏠">
+
+        <label for="parentId">Parent ID (opcional, para crear submenú)</label>
+        <input id="parentId" type="number" placeholder="Ej: 3 (para agregar dentro de Servicios)">
+
+        <div class="form-actions">
+          <button type="submit" id="saveBtn">Guardar</button>
+          <button type="button" id="cancelEditBtn" class="secondary">Cancelar</button>
+        </div>
+      </form>
+
+      <!-- Controles auxiliares -->
+      <div class="controls">
+        <button id="exportBtn">Exportar JSON (Descargar)</button>
+        <button id="resetBtn" class="danger">Restablecer al JSON original</button>
+      </div>
+
+      <!-- Mensajes al usuario (validaciones, confirmaciones) -->
+      <div id="message" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Panel que muestra la estructura JSON actual (útil para depurar) -->
+    <section class="panel data-panel">
+      <h2>Datos actuales (JSON)</h2>
+      <!-- Aquí colocamos una vista del JSON usado en tiempo real -->
+      <pre id="jsonView" class="json-view" aria-hidden="false"></pre>
+    </section>
+
+  </main>
+
+  <!-- Vinculamos el script principal, que carga menu.json y controla toda la lógica -->
+  <script src="script.js"></script>
+</body>
+</html>
