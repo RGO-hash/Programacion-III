@@ -1,0 +1,101 @@
+:root {
+  --color-principal: #B91C1C; /* Color base de la zona Mirador Sur */
+  --color-acento: #7a1414;
+  --color-fondo: #fbfcfd;
+  --color-card: #ffffff;
+  --texto: #111827;
+  --muted: #5b6b73;
+  --btn-text: #fff;
+}
+
+/* Reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--color-fondo);
+  color: var(--texto);
+  padding: 16px;
+}
+
+/* Enlace de accesibilidad */
+.skip-link {
+  position: absolute; left: -999px; top: 8px;
+  background: #000; color: #fff; padding: 8px 12px;
+  border-radius: 6px; z-index: 1000;
+}
+.skip-link:focus { left: 8px; }
+
+/* Estructura general */
+.site { max-width: 1100px; margin: auto; }
+
+/* Header */
+.site-header {
+  background: var(--color-principal);
+  color: var(--btn-text);
+  padding: 16px;
+  border-radius: 10px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.branding { display: flex; align-items: center; gap: 12px; }
+.logo { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; }
+.topnav a {
+  color: var(--btn-text);
+  margin-left: 10px;
+  text-decoration: none;
+}
+.topnav a:hover { text-decoration: underline; }
+
+/* Hero */
+.hero { display: grid; gap: 16px; margin-top: 16px; }
+.hero .intro { background: var(--color-card); padding: 16px; border-radius: 8px; }
+.hero .lead { color: var(--muted); }
+.hero .img-wrap img { width: 100%; border-radius: 8px; }
+
+/* Botones */
+.btn {
+  display: inline-block; padding: 10px 14px; border-radius: 6px;
+  text-decoration: none; font-weight: bold;
+}
+.btn-primary { background: var(--color-principal); color: var(--btn-text); }
+.btn-secondary { background: #f3f4f6; color: var(--texto); }
+
+/* Productos */
+.products { display: grid; gap: 12px; margin-top: 16px; }
+.card { 
+  background: var(--color-card); 
+  padding: 12px; 
+  border-radius: 8px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 12px; /* espacio entre la imagen y el texto */
+}
+
+/* 👇 Nuevo estilo para las imágenes de producto */
+.product-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0; /* evita que se deforme si falta espacio */
+}
+
+.price { color: var(--color-principal); font-weight: bold; }
+
+/* Info */
+.info-blocks { display: grid; gap: 12px; margin-top: 16px; }
+.info { background: var(--color-card); padding: 12px; border-radius: 8px; }
+
+/* Footer */
+.site-footer { margin-top: 20px; text-align: center; font-size: 0.9rem; color: var(--muted); }
+.site-footer a { color: var(--color-principal); text-decoration: none; }
+
+/* Responsividad */
+@media(min-width:600px) {
+  .hero { grid-template-columns: 1fr 1fr; }
+  .products { grid-template-columns: 1fr 1fr; }
+  .info-blocks { grid-template-columns: 1fr 1fr; }
+}
+@media(min-width:1024px) {
+  .products { grid-template-columns: 1fr 1fr 1fr; }
+}
